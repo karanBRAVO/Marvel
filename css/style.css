@@ -289,16 +289,86 @@ nav {
   text-transform: lowercase;
 }
 
-#page1 div {
-  width: 100%;
+#moving-container {
+  overflow: hidden;
+  padding: 10px;
+  width: 85%;
+  position: absolute;
+  bottom: 0;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-  margin: 4px 1px;
+  gap: 2.5vw;
 }
 
-#page1 div h2 {
+#moving-container::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--bg-color), transparent);
+  left: 0;
+  z-index: 2;
+}
+
+#moving-container::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(-90deg, var(--bg-color), transparent);
+  right: 0;
+  z-index: 2;
+}
+
+#moving-container .moving-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2.5vw;
+  animation: infiniteSlide 20s linear infinite normal;
+  animation-delay: 8s;
+}
+
+@keyframes infiniteSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#moving-container .moving-div img {
+  border-radius: 50px;
+  width: 12vw;
+  height: 20vh;
+  scale: 1;
+  border: 1px solid #fff;
+  transition: all 1 ease;
+}
+
+#moving-container .moving-div img:hover {
+  scale: 1.1;
+}
+
+/* Page 2 */
+#page2 {
+  background-color: var(--bg-color);
+  width: 100%;
+  min-height: 100vh;
+  padding: 5px;
+}
+
+#stanlee-cont {
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#stanlee-cont h2 {
   color: #ff0000;
   text-transform: capitalize;
   font-family: "Dancing Script", cursive;
@@ -308,15 +378,16 @@ nav {
   font-style: normal;
 }
 
-#page1 div img {
+#stanleeimg-top {
   width: 4vw;
   border-radius: 8px;
   margin: 0 4px;
 }
 
-/* Page 2 */
-#page2 {
+/* Page 3 */
+#page3 {
   background-color: var(--bg-color);
   width: 100%;
   min-height: 100vh;
+  padding: 5px;
 }

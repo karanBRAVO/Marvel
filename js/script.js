@@ -3,20 +3,24 @@ const startAnimations = () => {
 
   tl.from("nav", {
     y: "-100%",
-    delay: 0.2,
+    delay: 0.5,
     duration: 1,
-    stagger: 0.6,
     ease: "power3.out",
   })
+    .from("#moving-container", {
+      y: "100%",
+      duration: 1,
+      opacity: 0,
+      ease: "power3.out",
+    })
     .to("#page1 h1 span", {
       scale: 0,
-      duration: 1,
+      duration: 0.25,
       ease: "none",
     })
     .from("#page1 h1", {
-      y: 30,
+      y: 50,
       opacity: 0,
-      delay: 0.1,
       duration: 0.51,
       stagger: {
         amount: 0.5,
@@ -27,7 +31,6 @@ const startAnimations = () => {
         return index % 2 === 0 ? "-5vw" : "5vw";
       },
       opacity: 0,
-      delay: 0.1,
       duration: 0.5,
       stagger: {
         amount: 0.5,
