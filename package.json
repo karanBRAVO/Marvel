@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Creating a Marvel website for fan-club using HTML CSS JS only.",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "start": "electron ."
   },
